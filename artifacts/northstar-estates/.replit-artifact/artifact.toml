@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Northstar Estates"
+description = "A premium real estate website for Northstar Estates in Dallas–Fort Worth, with property discovery, listing details, lead capture, neighborhood guides, agents, resources, and mortgage planning tools."
+version = "1.0.0"
+id = "artifacts/northstar-estates"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24224
+
+[services.development]
+run = "pnpm --filter @workspace/northstar-estates run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/northstar-estates", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/northstar-estates/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24224"
+BASE_PATH = "/"

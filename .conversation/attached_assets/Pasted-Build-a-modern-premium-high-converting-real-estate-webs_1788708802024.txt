@@ -1,0 +1,389 @@
+Build a modern, premium, high-converting real estate website for a company called [REAL ESTATE COMPANY NAME].
+
+The website should feel trustworthy, sophisticated, professional, and visually impressive. It should be designed to generate leads from people who want to buy, sell, rent, or invest in real estate.
+
+Brand & Visual Design
+Industry: Real Estate
+Company: [COMPANY NAME]
+Location: [CITY / STATE / REGION]
+Primary audience: Home buyers, sellers, renters, investors, and property owners.
+Design style: Modern, luxury, clean, professional, and welcoming.
+Color palette: [e.g. navy blue, white, charcoal, and gold]
+Use large, high-quality property photography.
+Use elegant typography and generous whitespace.
+Use subtle animations and smooth transitions.
+Avoid a generic real estate template look.
+The website should feel like a premium real estate brand.
+Navigation
+Create a sticky navigation bar with:
+
+Home
+Properties
+Buy
+Sell
+Rent
+About
+Agents
+Resources
+Contact
+Add a prominent "Schedule a Consultation" button.
+
+On mobile, use a clean hamburger menu.
+
+Homepage
+Create a visually powerful hero section.
+
+Hero content:
+
+Headline:
+"Find a Place You'll Love to Call Home."
+
+Supporting text:
+"Discover exceptional properties and expert real estate guidance tailored to your goals."
+
+Add a prominent property search interface with:
+
+Buy / Rent toggle
+Location
+Property type
+Price range
+Bedrooms
+Bathrooms
+Search button
+Include quick search options such as:
+
+Homes for Sale
+Luxury Homes
+Condos
+New Construction
+Rental Properties
+Featured Properties
+Create a beautiful property listing section displaying 6–8 properties.
+
+Each property card should include:
+
+Large property image
+Price
+Address
+City/state
+Property type
+Bedrooms
+Bathrooms
+Square footage
+Favorite/heart button
+"View Property" button
+Example:
+
+$749,000
+Modern 4-Bedroom Family Home
+4 Beds · 3 Baths · 2,850 sq ft
+Dallas, TX
+
+Add filtering and sorting options:
+
+Price: Low to High
+Price: High to Low
+Newest
+Bedrooms
+Property Type
+Property Search Page
+Build a dedicated property search page.
+
+Include:
+
+Search bar
+Location filter
+Property type
+Minimum price
+Maximum price
+Bedrooms
+Bathrooms
+Square footage
+Listing status
+Amenities
+Advanced filters
+Display results in a responsive grid.
+
+Also include an optional map view.
+
+Each listing should have a clear CTA:
+
+View Details
+
+Property Details Page
+Create a premium property detail page.
+
+Include:
+
+Large image gallery
+Property price
+Address
+Property type
+Beds
+Baths
+Square footage
+Year built
+Property description
+Features and amenities
+Property highlights
+Floor plans
+Map/location
+Neighborhood information
+Mortgage/payment calculator
+Similar properties
+Add a sticky contact panel:
+
+Interested in this property?
+
+Buttons:
+
+Schedule a Showing
+Contact Agent
+Request More Information
+Buying Page
+Create a page designed to help buyers.
+
+Sections:
+
+Find Your Dream Home
+How Our Buying Process Works
+Why Work With Us
+First-Time Home Buyer Guide
+Mortgage Calculator
+Featured Properties
+Buyer Testimonials
+CTA: "Start Your Home Search"
+Create a simple 4-step buying process:
+
+Tell us what you're looking for
+Explore properties
+Tour your favorites
+Make an offer and close
+Selling Page
+Create a high-converting seller page.
+
+Hero headline:
+
+"Sell Your Property With Confidence."
+
+Include:
+
+Free home valuation form
+Current market insights
+Selling process
+Marketing strategy
+Professional photography
+Property promotion
+Negotiation expertise
+Closing support
+Create a lead form:
+
+Name
+Email
+Phone
+Property address
+Property type
+Estimated selling timeline
+Message
+CTA:
+
+"Get My Free Home Valuation"
+
+Rental Page
+Create a rental property section where users can:
+
+Search rentals
+Filter by price
+Select bedrooms/bathrooms
+Filter by amenities
+View available properties
+Request a tour
+Agents Page
+Create an attractive team directory.
+
+Each agent profile should include:
+
+Professional photo
+Name
+Title
+Specialties
+Areas served
+Short biography
+Phone
+Email
+Social links
+"View Profile" button
+Individual agent pages should include their listings, biography, testimonials, and contact form.
+
+About Us
+Create a strong company story.
+
+Include:
+
+Our Story
+Our Mission
+Our Values
+Why Choose Us
+Local Market Expertise
+Client Success
+Team introduction
+Add statistics such as:
+
+$250M+ Sales Volume
+500+ Homes Sold
+15+ Years Experience
+98% Client Satisfaction
+Use animated counters when the section enters the viewport.
+
+Testimonials
+Create a premium testimonial section.
+
+Display client reviews with:
+
+Client name
+Photo
+Star rating
+Review
+Transaction type
+Examples:
+
+"From our first showing to closing day, the team made the entire process simple and stress-free."
+
+Neighborhoods
+Create a page showcasing popular neighborhoods.
+
+Each neighborhood card should include:
+
+Large image
+Neighborhood name
+Short description
+Average home price
+Number of listings
+Lifestyle information
+"Explore Neighborhood" button
+Example neighborhoods:
+
+Downtown
+Uptown
+Highland Park
+Frisco
+Plano
+Southlake
+Make the neighborhoods easy to replace with real locations later.
+
+Mortgage Calculator
+Create an interactive mortgage calculator.
+
+Inputs:
+
+Home price
+Down payment
+Interest rate
+Loan term
+Property tax
+Home insurance
+Display:
+
+Estimated monthly payment
+Principal & interest
+Property taxes
+Insurance
+Total monthly payment
+Make the calculator visually simple and easy to use.
+
+Lead Generation
+The website should be optimized for lead generation.
+
+Strategically place CTAs throughout the site:
+
+Schedule a Showing
+Get a Home Valuation
+Find My Dream Home
+Talk to an Agent
+Request Information
+Schedule a Consultation
+Create contact forms that are short, modern, and easy to complete.
+
+After submitting a form, show a professional confirmation message.
+
+Resources / Blog
+Create a real estate resources section.
+
+Include articles such as:
+
+First-Time Home Buyer Guide
+How Much Home Can I Afford?
+How to Prepare Your Home for Sale
+Current Real Estate Market Trends
+Best Neighborhoods for Families
+Home Buying Checklist
+Create a clean blog layout with featured images, categories, dates, and reading time.
+
+Footer
+Create a premium footer containing:
+
+Company logo
+Short company description
+Navigation
+Buy
+Sell
+Rent
+Resources
+Contact information
+Office address
+Phone
+Email
+Social media links
+Newsletter signup
+Privacy Policy
+Terms of Service
+Include a copyright notice.
+
+User Experience
+The website must be:
+
+Fully responsive
+Mobile-first
+Fast loading
+Accessible
+SEO-friendly
+Easy to navigate
+Optimized for lead generation
+Visually polished
+Use:
+
+Smooth scrolling
+Subtle hover animations
+Image transitions
+Skeleton loading states
+Clean form validation
+Toast notifications
+Empty states
+Loading states
+Error states
+Do not overuse animations.
+
+Technical Requirements
+Use [Next.js / React / Vue / HTML-CSS-JS].
+
+Use reusable components for:
+
+Navigation
+Property cards
+Agent cards
+Testimonials
+Search filters
+Forms
+Buttons
+Modals
+Property galleries
+Footer
+Use realistic sample property data and images.
+
+Structure the application so real property listings can later be connected to a database or real estate API.
+
+Do not leave unfinished sections or placeholder buttons.
+
+Make every major CTA functional.
+
+Use semantic HTML, proper heading hierarchy, accessible labels, keyboard navigation, optimized images, metadata, Open Graph tags, and SEO-friendly URLs
