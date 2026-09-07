@@ -40,8 +40,14 @@ const neighborhoods = [
   { name: 'Fort Worth', note: 'Art, heritage & room to roam', image: 'https://images.pexels.com/photos/1812960/pexels-photo-1812960.jpeg?auto=compress&cs=tinysrgb&w=1200' },
 ];
 
+const projects = [
+  { name: 'The Foundry', type: 'Coming soon · Oak Lawn', note: 'City living with a quieter point of view.', image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1400', status: '24 residences' },
+  { name: 'Cedar House', type: 'Now leasing · Lakewood', note: 'Light-filled apartments shaped around the garden.', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1400', status: '12 homes' },
+  { name: 'Northline', type: 'Planned · North Dallas', note: 'Room to grow, with an address made for the long view.', image: 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1400', status: 'A new community' },
+];
+
 const nav = [
-  { href: '/properties', label: 'Properties' }, { href: '/buy', label: 'Buy' },
+  { href: '/properties', label: 'Properties' }, { href: '/projects', label: 'Projects' }, { href: '/buy', label: 'Buy' },
   { href: '/sell', label: 'Sell' }, { href: '/rent', label: 'Rent' },
   { href: '/neighborhoods', label: 'Neighborhoods' }, { href: '/agents', label: 'Our people' },
 ];
@@ -85,7 +91,7 @@ function Header({ favoritesCount, onConsultation }: { favoritesCount: number; on
     <div className="mx-auto flex h-[76px] max-w-[1380px] items-center justify-between px-5 lg:px-10">
       <Logo />
       <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
-        {nav.slice(0, 5).map(item => <Link key={item.href} href={item.href} data-testid={`link-nav-${item.label.toLowerCase().replace(' ', '-')}`} className={`relative py-3 text-[11px] font-semibold uppercase tracking-[.12em] transition-colors hover:text-[hsl(var(--primary))] ${location === item.href ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--muted-foreground))]'}`}>{item.label}{location === item.href && <span className="absolute bottom-0 left-0 h-px w-full bg-[hsl(var(--accent))]" />}</Link>)}
+       {nav.map(item => <Link key={item.href} href={item.href} data-testid={`link-nav-${item.label.toLowerCase().replace(' ', '-')}`} className={`relative py-3 text-[11px] font-semibold uppercase tracking-[.12em] transition-colors hover:text-[hsl(var(--primary))] ${location === item.href ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--muted-foreground))]'}`}>{item.label}{location === item.href && <span className="absolute bottom-0 left-0 h-px w-full bg-[hsl(var(--accent))]" />}</Link>)}
       </nav>
       <div className="flex items-center gap-2">
         <Link href="/properties?favorites=1" data-testid="link-favorites" aria-label={`Saved homes, ${favoritesCount} saved`} className="relative hidden rounded-full p-2.5 text-[hsl(var(--primary))] transition-colors hover:bg-[hsl(var(--secondary))] sm:block"><Heart size={19} strokeWidth={1.5} fill={favoritesCount ? 'currentColor' : 'none'} />{favoritesCount > 0 && <span className="absolute right-0 top-0 grid h-4 min-w-4 place-items-center rounded-full bg-[hsl(var(--accent))] px-1 text-[9px] font-bold">{favoritesCount}</span>}</Link>
@@ -106,7 +112,7 @@ function Footer() {
     <div className="mx-auto max-w-[1380px]">
       <div className="grid gap-12 border-b border-[hsl(var(--primary-foreground)/.16)] pb-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div><Logo /><p className="mt-6 max-w-xs text-sm leading-7 text-[hsl(var(--primary-foreground)/.64)]">A considered approach to real estate in Dallas–Fort Worth. Homes for the chapters ahead.</p></div>
-        <div><p className="mono mb-5 text-[hsl(var(--accent))]">Explore</p><div className="flex flex-col gap-3 text-sm text-[hsl(var(--primary-foreground)/.72)]"><Link href="/properties" data-testid="link-footer-properties">Properties</Link><Link href="/neighborhoods" data-testid="link-footer-neighborhoods">Neighborhoods</Link><Link href="/agents" data-testid="link-footer-agents">Our people</Link><Link href="/resources" data-testid="link-footer-resources">Journal & resources</Link></div></div>
+        <div><p className="mono mb-5 text-[hsl(var(--accent))]">Explore</p><div className="flex flex-col gap-3 text-sm text-[hsl(var(--primary-foreground)/.72)]"><Link href="/properties" data-testid="link-footer-properties">Properties</Link><Link href="/projects" data-testid="link-footer-projects">Projects</Link><Link href="/neighborhoods" data-testid="link-footer-neighborhoods">Neighborhoods</Link><Link href="/agents" data-testid="link-footer-agents">Our people</Link><Link href="/resources" data-testid="link-footer-resources">Journal & resources</Link></div></div>
         <div><p className="mono mb-5 text-[hsl(var(--accent))]">For owners</p><div className="flex flex-col gap-3 text-sm text-[hsl(var(--primary-foreground)/.72)]"><Link href="/sell" data-testid="link-footer-sell">Sell with us</Link><Link href="/rent" data-testid="link-footer-rent">Lease your home</Link><Link href="/contact" data-testid="link-footer-contact">Request a valuation</Link></div></div>
         <div><p className="mono mb-5 text-[hsl(var(--accent))]">Visit</p><p className="text-sm leading-7 text-[hsl(var(--primary-foreground)/.72)]">2912 Maple Avenue<br />Suite 110<br />Dallas, TX 75201</p><a href="tel:2145550188" data-testid="link-footer-phone" className="mt-4 block text-sm underline decoration-[hsl(var(--accent)/.6)] underline-offset-4">(214) 555-0188</a></div>
       </div>
@@ -224,6 +230,26 @@ function NeighborhoodsPage() {
   return <main className="mx-auto max-w-[1380px] px-5 py-14 lg:px-10 lg:py-20"><p className="mono text-[hsl(var(--accent-foreground))]">The local lens</p><h1 className="serif mt-4 max-w-3xl text-7xl leading-[.84] text-[hsl(var(--primary))] md:text-8xl">Find the place<br /><em>between places.</em></h1><p className="mt-8 max-w-lg text-base leading-7 text-[hsl(var(--muted-foreground))]">Every neighborhood has its own tempo. Start with the one that sounds like your kind of day.</p><div className="mt-14 grid gap-5 md:grid-cols-2">{neighborhoods.map((n, i) => <Link href={`/properties?search=${encodeURIComponent(n.name)}`} key={n.name} data-testid={`card-neighborhood-${i}`} className="group relative overflow-hidden"><div className="aspect-[1.6] overflow-hidden"><img src={n.image} alt={n.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /></div><div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--primary)/.8)] via-transparent to-transparent" /><div className="absolute bottom-6 left-6 text-[hsl(var(--primary-foreground))]"><h2 className="serif text-4xl">{n.name}</h2><p className="mt-1 text-sm text-[hsl(var(--primary-foreground)/.72)]">{n.note}</p></div><span className="absolute right-6 top-6 grid h-10 w-10 place-items-center rounded-full bg-[hsl(var(--background)/.85)] text-[hsl(var(--primary))] transition group-hover:bg-[hsl(var(--accent))]"><ArrowUpRight size={17} /></span></Link>)}</div></main>;
 }
 
+function ProjectsPage({ onConsultation }: { onConsultation: () => void }) {
+  useMeta('Projects', 'Explore Northstar Estates residential projects and upcoming communities across Dallas–Fort Worth.');
+  return <main>
+    <section className="bg-[hsl(var(--primary))] px-5 py-16 text-[hsl(var(--primary-foreground))] lg:px-10 lg:py-24">
+      <div className="mx-auto grid max-w-[1380px] items-end gap-10 lg:grid-cols-[1fr_.8fr]">
+        <div><p className="mono text-[hsl(var(--accent))]">Northstar projects</p><h1 className="serif mt-5 max-w-3xl text-7xl leading-[.82] md:text-8xl">Places made<br /><em className="text-[hsl(var(--accent))]">to last.</em></h1></div>
+        <p className="max-w-md text-base leading-7 text-[hsl(var(--primary-foreground)/.68)]">A closer look at the communities and residences taking shape across Dallas–Fort Worth — thoughtfully designed, locally rooted, and built for what comes next.</p>
+      </div>
+    </section>
+    <section className="mx-auto max-w-[1380px] px-5 py-16 lg:px-10 lg:py-24">
+      <SectionIntro eyebrow="The collection" title="The next chapter is taking shape." text="Explore current and upcoming projects, then talk with our team about finding the right place within them." />
+      <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">{projects.map((project, index) => <article key={project.name} className="group" data-testid={`card-project-${index}`}>
+        <div className="relative aspect-[.9] overflow-hidden bg-[hsl(var(--muted))]"><img src={project.image} alt={`${project.name} project`} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /><div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--primary)/.72)] via-transparent to-transparent" /><span className="absolute bottom-5 left-5 rounded-full bg-[hsl(var(--background)/.9)] px-3 py-1.5 text-[9px] font-bold uppercase tracking-[.13em] text-[hsl(var(--primary))]">{project.status}</span></div>
+        <p className="mono mt-5 text-[hsl(var(--accent-foreground))]">{project.type}</p><h2 className="serif mt-2 text-4xl text-[hsl(var(--primary))]">{project.name}</h2><p className="mt-3 text-sm leading-6 text-[hsl(var(--muted-foreground))]">{project.note}</p><button onClick={onConsultation} data-testid={`button-project-interest-${index}`} className="mt-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[.13em] text-[hsl(var(--primary))]">Register your interest <ArrowRight size={16} /></button>
+      </article>)}</div>
+    </section>
+    <section className="bg-[hsl(var(--secondary))] px-5 py-16 lg:px-10 lg:py-20"><div className="mx-auto flex max-w-[1380px] flex-col items-start justify-between gap-7 md:flex-row md:items-end"><div><p className="mono text-[hsl(var(--accent-foreground))]">Stay close</p><h2 className="serif mt-3 max-w-2xl text-5xl leading-[.94] text-[hsl(var(--primary))] md:text-6xl">Be first to know what’s next.</h2></div><button onClick={onConsultation} data-testid="button-projects-contact" className="flex items-center gap-3 rounded-full bg-[hsl(var(--primary))] px-6 py-4 text-xs font-bold uppercase tracking-[.14em] text-[hsl(var(--primary-foreground))]">Talk with our team <ArrowUpRight size={16} /></button></div></section>
+  </main>;
+}
+
 function AppShell() {
   const [favorites, setFavorites] = useState<string[]>(() => { try { return JSON.parse(localStorage.getItem('northstar-favorites') || '[]'); } catch { return []; } });
   const [modal, setModal] = useState<'conversation' | 'showing' | 'valuation' | 'newsletter' | null>(null); const [toast, setToast] = useState('');
@@ -233,6 +259,7 @@ function AppShell() {
     <Route path="/" component={() => <HomePage favorites={favorites} toggleFavorite={toggleFavorite} onConsultation={() => action('conversation')} />} />
     <Route path="/properties" component={() => <PropertiesPage favorites={favorites} toggleFavorite={toggleFavorite} />} />
     <Route path="/properties/:id" component={() => <DetailPage favorites={favorites} toggleFavorite={toggleFavorite} onToast={setToast} onShowing={() => action('showing')} />} />
+    <Route path="/projects" component={() => <ProjectsPage onConsultation={() => action('conversation')} />} />
     <Route path="/buy" component={() => <InfoPage kind="buy" onAction={action} />} />
     <Route path="/sell" component={() => <InfoPage kind="sell" onAction={action} />} />
     <Route path="/rent" component={() => <PropertiesPage initialRent favorites={favorites} toggleFavorite={toggleFavorite} />} />
